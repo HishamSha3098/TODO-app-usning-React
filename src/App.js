@@ -7,10 +7,11 @@ import CustomForm from './components/CustomForm';
 import EditForm from './components/EditForm';
 
 import TaskList from './components/TaskList';
+import useLocalStorage from './hooks/useLocalStorage';
 
 
 function App(){
-  const [tasks, setTask]=useState([]);
+  const [tasks, setTask]=useLocalStorage('react-todo.tasks',[]);
   const [PreviousFocusEl, setPreviousFocusEl]=useState(null);
 
   const [editedTask, setEditedTask]=useState(null);
